@@ -75,6 +75,59 @@ main .tarjeta {
   background: rgba(12, 27, 16, 0.85);
   backdrop-filter: blur(4px);
 }
+
+.zona-trex {
+  padding: 55px 15px;
+  text-align: center;
+}
+
+.zona-trex h2 {
+  color: #e8c47c;
+  letter-spacing: 2px;
+}
+
+.trex-escena {
+  width: 100%;
+  max-width: 520px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 0 35px rgba(0,0,0,.65);
+}
+
+.trex-imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: center;
+}
+
+.trex-escena.rugiendo {
+  animation: temblor .65s ease-in-out;
+}
+
+.trex-escena.rugiendo .trex-imagen {
+  animation: acercamiento .85s ease-out;
+}
+
+@keyframes temblor {
+  0%,100% {transform:translateX(0)}
+  15%,45%,75% {transform:translateX(-7px)}
+  30%,60%,90% {transform:translateX(7px)}
+}
+
+@keyframes acercamiento {
+  0% {transform:scale(1)}
+  45% {transform:scale(1.13)}
+  100% {transform:scale(1)}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trex-escena.rugiendo,
+  .trex-escena.rugiendo .trex-imagen {
+    animation:none;
+  }
+}
 </style>
 </head>
 <body>
@@ -89,11 +142,22 @@ main .tarjeta {
 
 
 <main id="aventura" hidden>
-<section>
- <h2>¡Estás invitado!</h2>
- <p>Prepárate para una aventura llena de dinosaurios, diversión y sorpresas.</p>
- 
+
+<section class="zona-trex">
+  <h2>¡BIENVENIDO A YESHUA PARK!</h2>
+  <p>Prepárate para una aventura prehistórica.</p>
+
+  <div class="trex-escena" id="trexEscena">
+    <img src="trex.png"
+         alt="T-Rex realista de Yeshua Park"
+         class="trex-imagen">
+  </div>
+
+  <button type="button" onclick="rugir()">
+    🦖 ¡ESCUCHAR RUGIDO!
+  </button>
 </section>
+
 
 <section class="tarjeta">
  <h2>EXPEDICIÓN JURÁSICA</h2>
