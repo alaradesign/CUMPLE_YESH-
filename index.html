@@ -651,6 +651,76 @@ button, .boton {
   margin: 0 auto;
   object-fit: contain;
 }
+
+.footer-alara {
+  background: #07100a;
+  padding: 35px 15px;
+  text-align: center;
+}
+
+.contenido-alara {
+  max-width: 650px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.footer-alara .logo-alara {
+  width: 120px;
+  max-width: 35%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.datos-alara {
+  text-align: left;
+}
+
+.datos-alara h3 {
+  color: #e8c47c;
+  font-size: 24px;
+}
+
+.datos-alara p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.datos-alara a {
+  color: #e8c47c;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.aviso-demo {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #c99b4c;
+  color: #e8c47c;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .contenido-alara {
+    gap: 12px;
+  }
+
+  .footer-alara .logo-alara {
+    width: 95px;
+  }
+
+  .datos-alara h3 {
+    font-size: 20px;
+  }
+
+  .datos-alara p {
+    font-size: 14px;
+  }
+}
+
 </style>
 
 </head>
@@ -812,19 +882,30 @@ button, .boton {
 
 </main>
 
-<footer>
-  
-<div class="marca-alara">
-  <img src="logo-alara.jpge"
-       alt="ALARA DESIGN"
-       class="logo-alara">
-</div>
 
- <strong>ALARA DESIGN</strong>
- <p>Invitaciones digitales interactivas</p>
- <p>WhatsApp: 669 248 1161</p>
- <a href="https://wa.me/526692481161?text=Hola%2C%20quiero%20cotizar%20una%20invitaci%C3%B3n%20digital" target="_blank" rel="noopener">Cotiza con nosotros</a>
+<footer class="footer-alara">
+  <div class="contenido-alara">
+    <img src="logo-alara.jpeg"
+         alt="Logotipo ALARA DESIGN"
+         class="logo-alara">
+
+    <div class="datos-alara">
+      <h3>ALARA DESIGN</h3>
+      <p>Invitaciones digitales interactivas</p>
+      <p>WhatsApp: 669 248 1161</p>
+      <a href="https://wa.me/526692481161"
+         target="_blank"
+         rel="noopener">
+        COTIZA CON NOSOTROS
+      </a>
+    </div>
+  </div>
+
+  <p class="aviso-demo">
+    INVITACIÓN DE DEMOSTRACIÓN
+  </p>
 </footer>
+
 
 <script>
 
