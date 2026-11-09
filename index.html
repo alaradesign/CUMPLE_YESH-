@@ -552,7 +552,93 @@ button, .boton {
   font-weight: bold;
 }
 
-</style>
+/* RECUADRO CONFIRMACION JURASICA */
+
+.confirmacion-jurasica {
+  width: calc(100% - 30px);
+  max-width: 550px;
+  margin: 45px auto;
+  padding: 35px 22px;
+  background: rgba(8, 24, 13, 0.94);
+  border: 3px solid #c99b4c;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.65);
+  text-align: center;
+}
+
+.confirmacion-jurasica h2 {
+  font-size: clamp(30px, 7vw, 45px);
+  line-height: 1.2;
+  color: #e8c47c;
+  margin-bottom: 25px;
+}
+
+.confirmacion-jurasica > p {
+  font-size: clamp(19px, 4vw, 24px);
+  line-height: 1.5;
+}
+
+.confirmacion-jurasica .condiciones-pase {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px dashed #c99b4c;
+}
+
+.confirmacion-jurasica .condiciones-pase p {
+  font-size: clamp(17px, 3.8vw, 22px);
+  line-height: 1.5;
+  color: #f3dfae;
+}
+
+.confirmacion-jurasica .cortesia-jurasica {
+  font-size: clamp(19px, 4.2vw, 25px);
+  font-weight: 900;
+  color: #e8c47c;
+}
+
+/* TEXTOS GRANDES PRESENTACION YESHUA PARK */
+
+.presentacion-yeshua .alerta-jurasica {
+  font-size: clamp(20px, 4.5vw, 30px);
+  line-height: 1.4;
+  letter-spacing: 2px;
+}
+
+.presentacion-yeshua .texto-aventura {
+  font-size: clamp(23px, 5vw, 32px);
+  line-height: 1.4;
+  margin: 30px auto;
+}
+
+.presentacion-yeshua .titulo-yeshua {
+  font-size: clamp(65px, 15vw, 105px);
+  line-height: 1.1;
+  margin: 25px auto;
+}
+
+.presentacion-yeshua .edad-jurasica {
+  font-size: clamp(34px, 8vw, 55px);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+/* AJUSTE PARA CELULARES */
+@media (max-width: 480px) {
+  .presentacion-yeshua {
+    padding: 55px 12px;
+  }
+
+  .presentacion-yeshua .titulo-yeshua {
+    font-size: clamp(52px, 14vw, 75px);
+  }
+
+  .presentacion-yeshua .edad-jurasica {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+}
+
+
 .marca-alara {
   text-align: center;
   margin: 10px auto 25px;
@@ -565,6 +651,7 @@ button, .boton {
   margin: 0 auto;
   object-fit: contain;
 }
+</style>
 
 </head>
 <body>
@@ -656,15 +743,7 @@ button, .boton {
   <h2>¡BIENVENIDO A YESHUA PARK!</h2>
   <p>Prepárate para una aventura prehistórica.</p>
 
-  <div class="trex-escena" id="trexEscena">
-    <img src="trex.jpge"
-         alt="T-Rex realista de Yeshua Park"
-         class="trex-imagen">
-  </div>
 
-  <button type="button" onclick="rugir()">
-    🦖 ¡ESCUCHAR RUGIDO!
-  </button>
 </section>
 
 
@@ -791,14 +870,7 @@ function entrar() {
 
   
 
-function rugir() {
-  const escena = document.getElementById("trexEscena");
-  if (!escena) return;
-  escena.classList.remove("rugiendo");
-  void escena.offsetWidth;
-  escena.classList.add("rugiendo");
-  setTimeout(() => escena.classList.remove("rugiendo"), 900);
-}
+
 
 function actualizar(){
  const fecha=new Date("2027-01-23T16:00:00-07:00");
