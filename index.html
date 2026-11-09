@@ -36,18 +36,24 @@ footer a{color:#e8c47c}
   display: block;
 }
 
+
 .entrada-jurasica {
   position: absolute;
-  left: 24%;
-  top: 77%;
-  width: 52%;
-  height: 9%;
+  left: 10%;
+  top: 68%;
+  width: 80%;
+  height: 24%;
+  margin: 0;
+  padding: 0;
   background: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
+  border-radius: 0;
   cursor: pointer;
+  z-index: 100;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
+
 
 .entrada-jurasica:focus-visible {
   outline: 3px solid #ffd16b;
@@ -682,19 +688,47 @@ button, .boton {
 
 <script>
 
+
 function entrar() {
   const puertas = document.getElementById("puertasJurasicas");
   const aventura = document.getElementById("aventura");
+  const audio = document.getElementById("musicaJurasica");
+  const botonMusica = document.getElementById("botonMusica");
+
   if (!aventura) return;
+
+  // Activar música desde el clic del visitante
+  if (audio && audio.paused) {
+    audio.play().then(() => {
+      if (botonMusica) {
+        botonMusica.classList.add("activa");
+        botonMusica.textContent = "♫";
+        botonMusica.setAttribute("aria-label", "Silenciar música");
+      }
+    }).catch(() => {
+      // El visitante podrá activarla manualmente
+    });
+  }
+
+  // Mostrar la invitación
   aventura.hidden = false;
-  aventura.scrollIntoView({ behavior: "auto" });
+
+  // Animación de las puertas
   if (puertas) {
     puertas.classList.remove("abriendo");
     void puertas.offsetWidth;
     puertas.classList.add("abriendo");
-    setTimeout(() => puertas.classList.remove("abriendo"), 2700);
+
+    setTimeout(() => {
+      puertas.classList.remove("abriendo");
+    }, 2700);
   }
+
+  aventura.scrollIntoView({ behavior: "instant" });
 }
+
+
+  
 
 function rugir() {
   const escena = document.getElementById("trexEscena");
