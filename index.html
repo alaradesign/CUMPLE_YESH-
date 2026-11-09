@@ -167,7 +167,7 @@ main .tarjeta {
 
 .mensaje-galeria {
   color: #e8c47c;
-  font-: italic;
+  font-style: italic;
   margin-top: 20px;
 }
 
@@ -198,7 +198,7 @@ main .tarjeta {
 .texto-aventura {
   margin-top: 30px;
   font-size: 19px;
-  font-: italic;
+  font-style: italic;
 }
 
 .titulo-yeshua {
@@ -512,16 +512,8 @@ button, .boton {
 </style>
 </head>
 <body>
- 
-</head>
-<body>
 
-<div class="puertas-jurasicas"
-     id="puertasJurasicas"
-     aria-hidden="true">
-  <div class="puerta puerta-izquierda"></div>
-  <div class="puerta puerta-derecha"></div>
-</div>
+
 
 
  
@@ -589,7 +581,6 @@ button, .boton {
   </p>
 </section>
 
-<section class="zona-trex">
 <section class="galeria-yeshua">
   <h2>LAS AVENTURAS DE YESHUA</h2>
   <p>10 años explorando un mundo extraordinario</p>
@@ -626,7 +617,7 @@ button, .boton {
  <p>Celebramos los 10 años de Yeshua</p>
  <p>23 de enero de 2027</p>
  <p>4:00 PM</p>
- <p>Lugar: Parque Jurásico (demostración)</p>
+ <p>Lugar: Sushi Marea Negra, Mazatlán</p>
 </section>
 
 <section>
@@ -650,7 +641,8 @@ button, .boton {
 </section>
 
 
-  <section class="ubicacion-jurasica">   <div class="mapa-expedicion">     <div class="etiqueta-expedicion">       EXPEDICIÓN YESHUA PARK     </div>      <h2>PUNTO DE ENCUENTRO       DE LOS EXPLORADORES</h2>      <div class="simbolo-mapa">📍</div>      <h3>SUSHI MAREA NEGRA</h3>     <p>Mazatlán, Sinaloa</p>      <p class="mensaje-ubicacion">       ¡Prepara tu equipo de explorador!       La aventura está por comenzar.     </p>      <a class="boton-mapa"        href="https://maps.app.goo.gl/wbn8Pq6U7ddJdzUr6"        target="_blank"        rel="noopener noreferrer">       VER UBICACIÓN EN GOOGLE MAPS     </a>   </div> 
+  <section class="ubicacion-jurasica">   <div class="mapa-expedicion">     <div class="etiqueta-expedicion">       EXPEDICIÓN YESHUA PARK     </div>      <h2>PUNTO DE ENCUENTRO       DE LOS EXPLORADORES</h2>      <div class="simbolo-mapa">📍</div>      <h3>SUSHI MAREA NEGRA</h3>     <p>Mazatlán, Sinaloa</p>      <p class="mensaje-ubicacion">       ¡Prepara tu equipo de explorador!       La aventura está por comenzar.     </p>      <a class="boton-mapa"        href="https://maps.app.goo.gl/wbn8Pq6U7ddJdzUr6"        target="_blank"        rel="noopener noreferrer">       VER UBICACIÓN EN GOOGLE MAPS     </a>   </div>
+</section>
  
 
 
@@ -671,7 +663,7 @@ button, .boton {
      href="https://wa.me/526692481161?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales%20de%20ALARA%20DESIGN"
      target="_blank"
      rel="noopener noreferrer">
-    CONFIRMAR ASISTENCIA
+    COTIZA TU INVITACIÓN
   </a>
 
   <p class="aviso-demo">
@@ -690,26 +682,29 @@ button, .boton {
 
 <script>
 
- function entrar() {   const puertas = document.getElementById("puertasJurasicas");   const aventura = document.getElementById("aventura");    if (!puertas || !aventura) return;    aventura.hidden = false;    puertas.classList.remove("abriendo");   void puertas.offsetWidth;   puertas.classList.add("abriendo");    aventura.scrollIntoView({ behavior: "instant" });    setTimeout(() => {     puertas.classList.remove("abriendo");   }, 2700); } {
+function entrar() {
   const puertas = document.getElementById("puertasJurasicas");
   const aventura = document.getElementById("aventura");
-
-  if (!puertas || !aventura) return;
-
+  if (!aventura) return;
   aventura.hidden = false;
-
-  puertas.classList.remove("abriendo");
-  void puertas.offsetWidth;
-  puertas.classList.add("abriendo");
-
-  aventura.scrollIntoView({behavior:"instant"});
-
-  setTimeout(() => {
+  aventura.scrollIntoView({ behavior: "auto" });
+  if (puertas) {
     puertas.classList.remove("abriendo");
-  }, 2700);
+    void puertas.offsetWidth;
+    puertas.classList.add("abriendo");
+    setTimeout(() => puertas.classList.remove("abriendo"), 2700);
+  }
 }
 
+function rugir() {
+  const escena = document.getElementById("trexEscena");
+  if (!escena) return;
+  escena.classList.remove("rugiendo");
+  void escena.offsetWidth;
+  escena.classList.add("rugiendo");
+  setTimeout(() => escena.classList.remove("rugiendo"), 900);
 }
+
 function actualizar(){
  const fecha=new Date("2027-01-23T16:00:00-07:00");
  const diferencia=fecha-new Date();
@@ -728,6 +723,7 @@ function alternarMusica() {
   const audio = document.getElementById("musicaJurasica");
   const boton = document.getElementById("botonMusica");
 
+  if (!audio || !boton) return;
   if (audio.paused) {
     audio.play().then(() => {
       boton.classList.add("activa");
