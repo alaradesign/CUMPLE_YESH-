@@ -328,6 +328,58 @@ button, .boton {
   font-size: clamp(55px, 14vw, 95px);
 }
 
+.ubicacion-jurasica {
+  padding: 70px 16px;
+  text-align: center;
+}
+
+.mapa-expedicion {
+  max-width: 520px;
+  margin: auto;
+  padding: 40px 20px;
+  background: rgba(8, 20, 12, 0.90);
+  border: 3px solid #b9934d;
+  border-radius: 18px;
+  box-shadow: 0 0 35px rgba(0,0,0,.75);
+}
+
+.mapa-expedicion h2 {
+  color: #e8c47c;
+  font-size: clamp(25px, 6vw, 38px);
+  line-height: 1.2;
+}
+
+.mapa-expedicion h3 {
+  color: #fff0bd;
+  font-size: 26px;
+}
+
+.simbolo-mapa {
+  font-size: 55px;
+  margin: 25px 0;
+}
+
+.mensaje-ubicacion {
+  color: #e8c47c;
+  margin: 25px auto;
+}
+
+.boton-mapa {
+  display: inline-block;
+  padding: 17px 22px;
+  background: #b9934d;
+  color: #101b13;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: transform .3s;
+}
+
+.boton-mapa:hover {
+  transform: scale(1.05);
+}
+
 </style>
 </head>
 <body>
@@ -433,7 +485,7 @@ button, .boton {
 </section>
 
 <section>
- <h2>Ubicación de la aventura</h2>
+  <section class="ubicacion-jurasica">   <div class="mapa-expedicion">     <div class="etiqueta-expedicion">       EXPEDICIÓN YESHUA PARK     </div>      <h2>PUNTO DE ENCUENTRO       DE LOS EXPLORADORES</h2>      <div class="simbolo-mapa">📍</div>      <h3>SUSHI MAREA NEGRA</h3>     <p>Mazatlán, Sinaloa</p>      <p class="mensaje-ubicacion">       ¡Prepara tu equipo de explorador!       La aventura está por comenzar.     </p>      <a class="boton-mapa"        href="https://maps.app.goo.gl/wbn8Pq6U7ddJdzUr6"        target="_blank"        rel="noopener noreferrer">       VER UBICACIÓN EN GOOGLE MAPS     </a>   </div> </section>
  <p>Ubicación ficticia para demostración</p>
  <button disabled>📍 Ver ubicación (demo)</button>
 </section>
