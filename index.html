@@ -167,7 +167,7 @@ main .tarjeta {
 
 .mensaje-galeria {
   color: #e8c47c;
-  font-style: italic;
+  font-: italic;
   margin-top: 20px;
 }
 
@@ -198,7 +198,7 @@ main .tarjeta {
 .texto-aventura {
   margin-top: 30px;
   font-size: 19px;
-  font-style: italic;
+  font-: italic;
 }
 
 .titulo-yeshua {
@@ -448,9 +448,78 @@ button, .boton {
   box-shadow: 0 0 22px #c99b4c;
 }
 
+/* PUERTAS CINEMATOGRAFICAS YESHUA PARK */
+
+.puertas-jurasicas {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.puertas-jurasicas.abriendo {
+  visibility: visible;
+}
+
+.puerta {
+  width: 50%;
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      #100e0b,
+      #493521 45%,
+      #1a140e
+    );
+  border: 5px solid #100e0b;
+  box-shadow: inset 0 0 45px #000;
+}
+
+.puerta-izquierda {
+  transform-origin: left center;
+}
+
+.puerta-derecha {
+  transform-origin: right center;
+}
+
+.puertas-jurasicas.abriendo .puerta-izquierda {
+  animation: abrirIzquierda 2.5s ease-in forwards;
+}
+
+.puertas-jurasicas.abriendo .puerta-derecha {
+  animation: abrirDerecha 2.5s ease-in forwards;
+}
+
+@keyframes abrirIzquierda {
+  0%,15% {transform:perspective(900px) rotateY(0)}
+  100% {transform:perspective(900px) rotateY(-105deg)}
+}
+
+@keyframes abrirDerecha {
+  0%,15% {transform:perspective(900px) rotateY(0)}
+  100% {transform:perspective(900px) rotateY(105deg)}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puertas-jurasicas.abriendo .puerta {
+    animation-duration: .01s;
+  }
+}
+
 </style>
 </head>
 <body>
+  
+<div class="puertas-jurasicas"
+     id="puertasJurasicas"
+     aria-hidden="true">
+  <div class="puerta puerta-izquierda"></div>
+  <div class="puerta puerta-derecha"></div>
+</div>
+
 
 <audio id="musicaJurasica" loop preload="none">
   <source src="cancion%20autorizada.mp3" type="audio/mpeg">
@@ -607,9 +676,26 @@ button, .boton {
 </footer>
 
 <script>
-function entrar(){
- document.querySelector("main").hidden=false;
- document.getElementById("aventura").scrollIntoView({behavior:"smooth"});
+
+function entrar() {
+  const puertas = document.getElementById("puertasJurasicas");
+  const aventura = document.getElementById("aventura");
+
+  if (!puertas || !aventura) return;
+
+  aventura.hidden = false;
+
+  puertas.classList.remove("abriendo");
+  void puertas.offsetWidth;
+  puertas.classList.add("abriendo");
+
+  aventura.scrollIntoView({behavior:"instant"});
+
+  setTimeout(() => {
+    puertas.classList.remove("abriendo");
+  }, 2700);
+}
+
 }
 function actualizar(){
  const fecha=new Date("2027-01-23T16:00:00-07:00");
