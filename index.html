@@ -512,6 +512,19 @@ button, .boton {
 </style>
 </head>
 <body>
+ 
+</head>
+<body>
+
+<div class="puertas-jurasicas"
+     id="puertasJurasicas"
+     aria-hidden="true">
+  <div class="puerta puerta-izquierda"></div>
+  <div class="puerta puerta-derecha"></div>
+</div>
+
+
+ 
   
 <div class="puertas-jurasicas"
      id="puertasJurasicas"
@@ -677,7 +690,7 @@ button, .boton {
 
 <script>
 
-function entrar() {
+ function entrar() {   const puertas = document.getElementById("puertasJurasicas");   const aventura = document.getElementById("aventura");    if (!puertas || !aventura) return;    aventura.hidden = false;    puertas.classList.remove("abriendo");   void puertas.offsetWidth;   puertas.classList.add("abriendo");    aventura.scrollIntoView({ behavior: "instant" });    setTimeout(() => {     puertas.classList.remove("abriendo");   }, 2700); } {
   const puertas = document.getElementById("puertasJurasicas");
   const aventura = document.getElementById("aventura");
 
