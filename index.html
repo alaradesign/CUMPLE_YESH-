@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeshua | Aventura Jurásica</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#101b13;color:#fff;font-family:Arial,sans-serif;text-align:center}
+section{padding:65px 20px}
+.portada{min-height:100svh;display:flex;align-items:center;justify-content:center;background:linear-gradient(#07120b55,#07120bee),radial-gradient(circle at 50% 20%,#52743b,#102014 70%)}
+h1{font-size:clamp(50px,13vw,90px);margin:15px 0;color:#e8c47c;text-shadow:3px 5px #142016}
+h2{color:#e8c47c}
+.subtitulo{letter-spacing:5px;color:#e8c47c}
+.numero{font-size:85px;font-weight:900}
+button,.boton{display:inline-block;background:#c99b4c;color:#101b13;border:0;border-radius:30px;padding:17px 25px;font-weight:bold;text-decoration:none;cursor:pointer;margin:12px}
+.tarjeta{background:#203525;border:1px solid #7e985e;border-radius:22px;padding:30px 18px;max-width:500px;margin:20px auto}
+.dino{font-size:85px;animation:mover 3s ease-in-out infinite}
+@keyframes mover{50%{transform:translateY(-12px)}}
+.contador{font-size:25px;font-weight:bold;color:#e8c47c}
+footer{padding:35px 15px;background:#07100a}
+footer a{color:#e8c47c}
+</style>
+</head>
+<body>
+<div class="portada">
+ <div>
+  <div class="subtitulo">UNA AVENTURA PREHISTÓRICA</div>
+  <div class="dino">🦖</div>
+  <h1>YESHUA</h1>
+  <div class="numero">10 AÑOS</div>
+  <p>¡El parque jurásico está por abrir sus puertas!</p>
+  <button onclick="entrar()">🦕 COMENZAR AVENTURA</button>
+ </div>
+</div>
+
+<main id="aventura" hidden>
+<section>
+ <h2>¡Estás invitado!</h2>
+ <p>Prepárate para una aventura llena de dinosaurios, diversión y sorpresas.</p>
+ <div class="dino">🦕</div>
+</section>
+
+<section class="tarjeta">
+ <h2>EXPEDICIÓN JURÁSICA</h2>
+ <p>Celebramos los 10 años de Yeshua</p>
+ <p>23 de enero de 2027</p>
+ <p>4:00 PM</p>
+ <p>Lugar: Parque Jurásico (demostración)</p>
+</section>
+
+<section>
+ <h2>Cuenta regresiva</h2>
+ <div class="contador" id="contador"></div>
+</section>
+
+<section>
+ <h2>Ubicación de la aventura</h2>
+ <p>Ubicación ficticia para demostración</p>
+ <button disabled>📍 Ver ubicación (demo)</button>
+</section>
+
+<section>
+ <h2>Confirma tu asistencia</h2>
+ <p>¡No queremos que ningún explorador se quede fuera!</p>
+ <button disabled>Confirmar asistencia (demo)</button>
+</section>
+</main>
+
+<footer>
+ <strong>ALARA DESIGN</strong>
+ <p>Invitaciones digitales interactivas</p>
+ <p>WhatsApp: 669 248 1161</p>
+ <a href="https://wa.me/526692481161?text=Hola%2C%20quiero%20cotizar%20una%20invitaci%C3%B3n%20digital" target="_blank" rel="noopener">Cotiza con nosotros</a>
+</footer>
+
+<script>
+function entrar(){
+ document.querySelector("main").hidden=false;
+ document.getElementById("aventura").scrollIntoView({behavior:"smooth"});
+}
+function actualizar(){
+ const fecha=new Date("2027-01-23T16:00:00-07:00");
+ const diferencia=fecha-new Date();
+ const el=document.getElementById("contador");
+ if(diferencia<=0){el.textContent="¡La aventura ha comenzado!";return}
+ const dias=Math.floor(diferencia/86400000);
+ const horas=Math.floor(diferencia/3600000)%24;
+ const minutos=Math.floor(diferencia/60000)%60;
+ const segundos=Math.floor(diferencia/1000)%60;
+ el.textContent=`${dias}d ${horas}h ${minutos}m ${segundos}s`;
+}
+actualizar();
+setInterval(actualizar,1000);
+</script>
+</body>
+</html>
