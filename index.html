@@ -380,6 +380,52 @@ button, .boton {
   transform: scale(1.05);
 }
 
+.confirmacion-jurasica {
+  padding: 65px 18px;
+  text-align: center;
+  background: rgba(5, 17, 9, .65);
+}
+
+.confirmacion-jurasica h2 {
+  color: #e8c47c;
+}
+
+.pase-explorador {
+  max-width: 390px;
+  margin: 30px auto;
+  padding: 30px 15px;
+  border: 3px dashed #c99b4c;
+  border-radius: 15px;
+  background: rgba(15, 30, 18, .94);
+  box-shadow: 0 8px 30px #0009;
+}
+
+.pase-explorador span {
+  color: #e8c47c;
+  letter-spacing: 3px;
+}
+
+.pase-explorador h3 {
+  font-size: 29px;
+  color: #fff0bd;
+}
+
+.boton-confirmar {
+  display: inline-block;
+  background: #c99b4c;
+  color: #101b13;
+  padding: 18px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.aviso-demo {
+  margin-top: 25px;
+  font-size: 12px;
+  opacity: .8;
+}
+
 </style>
 </head>
 <body>
@@ -488,11 +534,32 @@ button, .boton {
   <section class="ubicacion-jurasica">   <div class="mapa-expedicion">     <div class="etiqueta-expedicion">       EXPEDICIÓN YESHUA PARK     </div>      <h2>PUNTO DE ENCUENTRO       DE LOS EXPLORADORES</h2>      <div class="simbolo-mapa">📍</div>      <h3>SUSHI MAREA NEGRA</h3>     <p>Mazatlán, Sinaloa</p>      <p class="mensaje-ubicacion">       ¡Prepara tu equipo de explorador!       La aventura está por comenzar.     </p>      <a class="boton-mapa"        href="https://maps.app.goo.gl/wbn8Pq6U7ddJdzUr6"        target="_blank"        rel="noopener noreferrer">       VER UBICACIÓN EN GOOGLE MAPS     </a>   </div> 
  
 
-<section>
- <h2>Confirma tu asistencia</h2>
- <p>¡No queremos que ningún explorador se quede fuera!</p>
- <button disabled>Confirmar asistencia (demo)</button>
+
+<section class="confirmacion-jurasica">
+  <h2>CONFIRMA TU EXPEDICIÓN</h2>
+
+  <p>¡No queremos que ningún explorador
+  se quede fuera de esta aventura!</p>
+
+  <div class="pase-explorador">
+    <span>YESHUA PARK</span>
+    <h3>PASE DE EXPLORADOR</h3>
+    <p>ACCESO A LA AVENTURA JURÁSICA</p>
+    <p>23 DE ENERO DE 2027</p>
+  </div>
+
+  <a class="boton-confirmar"
+     href="https://wa.me/526692481161?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales%20de%20ALARA%20DESIGN"
+     target="_blank"
+     rel="noopener noreferrer">
+    CONFIRMAR ASISTENCIA
+  </a>
+
+  <p class="aviso-demo">
+    Invitación de demostración de ALARA DESIGN
+  </p>
 </section>
+
 </main>
 
 <footer>
