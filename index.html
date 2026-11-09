@@ -243,6 +243,43 @@ main .tarjeta {
   to {opacity:1;transform:translateY(0)}
 }
 
+
+.calendario-jurasico {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 35px 18px;
+  background: rgba(8, 22, 12, 0.88);
+  border: 2px solid #b9934d;
+  border-radius: 22px;
+  box-shadow: 0 0 35px rgba(0,0,0,.6);
+}
+
+.etiqueta-expedicion {
+  color: #e8c47c;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.calendario-jurasico h2 {
+  font-size: 28px;
+  color: #e8c47c;
+  margin: 25px 0 10px;
+}
+
+.calendario-jurasico .contador {
+  font-size: clamp(22px, 6vw, 32px);
+  margin: 25px 0;
+  color: white;
+  font-weight: 900;
+}
+
+.mensaje-contador {
+  font-size: 14px;
+  color: #e8c47c;
+  letter-spacing: 1px;
+}
+
 </style>
 </head>
 <body>
@@ -328,8 +365,23 @@ main .tarjeta {
 </section>
 
 <section>
- <h2>Cuenta regresiva</h2>
- <div class="contador" id="contador"></div>
+ 
+<div class="calendario-jurasico">
+  <div class="etiqueta-expedicion">
+    🦖 FECHA DE LA EXPEDICIÓN
+  </div>
+
+  <h2>23 DE ENERO DE 2027</h2>
+  <p>¡El gran día se acerca!</p>
+
+  <div class="contador" id="contador"></div>
+
+  <p class="mensaje-contador">
+    Días restantes para abrir las puertas
+    de YESHUA PARK
+  </p>
+</div>
+
 </section>
 
 <section>
