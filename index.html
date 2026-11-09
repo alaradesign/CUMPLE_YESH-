@@ -22,19 +22,48 @@ button,.boton{display:inline-block;background:#c99b4c;color:#101b13;border:0;bor
 .contador{font-size:25px;font-weight:bold;color:#e8c47c}
 footer{padding:35px 15px;background:#07100a}
 footer a{color:#e8c47c}
+
+.portada-jurasica {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.portada-jurasica img {
+  width: 100%;
+  display: block;
+}
+
+.entrada-jurasica {
+  position: absolute;
+  left: 24%;
+  top: 77%;
+  width: 52%;
+  height: 9%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.entrada-jurasica:focus-visible {
+  outline: 3px solid #ffd16b;
+}
 </style>
 </head>
 <body>
-<div class="portada">
- <div>
-  <div class="subtitulo">UNA AVENTURA PREHISTÓRICA</div>
-  <div class="dino">🦖</div>
-  <h1>YESHUA</h1>
-  <div class="numero">10 AÑOS</div>
-  <p>¡El parque jurásico está por abrir sus puertas!</p>
-  <button onclick="entrar()">🦕 COMENZAR AVENTURA</button>
- </div>
+
+<div class="portada-jurasica">
+  <img src="portada.png" alt="Yeshua cumple 10 años">
+  <button class="entrada-jurasica"
+    onclick="entrar()"
+    aria-label="Comenzar aventura">
+  </button>
 </div>
+
 
 <main id="aventura" hidden>
 <section>
