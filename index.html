@@ -532,7 +532,40 @@ button, .boton {
   }
 }
 
+.condiciones-pase {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px dashed #c99b4c;
+}
+
+.condiciones-pase p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f3dfae;
+  letter-spacing: 1px;
+}
+
+.condiciones-pase .cortesia-jurasica {
+  margin-top: 14px;
+  color: #e8c47c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 </style>
+.marca-alara {
+  text-align: center;
+  margin: 10px auto 25px;
+}
+
+.logo-alara {
+  display: block;
+  width: min(230px, 75%);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 </head>
 <body>
 
@@ -624,7 +657,7 @@ button, .boton {
   <p>Prepárate para una aventura prehistórica.</p>
 
   <div class="trex-escena" id="trexEscena">
-    <img src="trex.png"
+    <img src="trex.jpge"
          alt="T-Rex realista de Yeshua Park"
          class="trex-imagen">
   </div>
@@ -675,12 +708,16 @@ button, .boton {
   <p>¡No queremos que ningún explorador
   se quede fuera de esta aventura!</p>
 
-  <div class="pase-explorador">
-    <span>YESHUA PARK</span>
-    <h3>PASE DE EXPLORADOR</h3>
-    <p>ACCESO A LA AVENTURA JURÁSICA</p>
-    <p>23 DE ENERO DE 2027</p>
-  </div>
+ 
+<div class="condiciones-pase">
+  <p>CONSUMO DE ALIMENTOS Y BEBIDAS
+  POR CUENTA DE CADA EXPLORADOR</p>
+
+  <p class="cortesia-jurasica">
+    🎟️ PASE VÁLIDO POR UNA CORTESÍA
+  </p>
+</div>
+
 
   <a class="boton-confirmar"
      href="https://wa.me/526692481161?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales%20de%20ALARA%20DESIGN"
@@ -697,6 +734,13 @@ button, .boton {
 </main>
 
 <footer>
+  
+<div class="marca-alara">
+  <img src="logo-alara.jpge"
+       alt="ALARA DESIGN"
+       class="logo-alara">
+</div>
+
  <strong>ALARA DESIGN</strong>
  <p>Invitaciones digitales interactivas</p>
  <p>WhatsApp: 669 248 1161</p>
